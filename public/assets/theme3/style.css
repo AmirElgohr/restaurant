@@ -1,0 +1,14 @@
+.flex-wrap-ul {
+    flex-wrap: unset !important;
+    white-space: nowrap !important;
+}
+
+.item_img {
+    width: 85px !important;
+    max-width: auto !important;
+    flex: none;
+}
+
+.star_icon {
+    flex: none;
+}

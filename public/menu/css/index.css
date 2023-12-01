@@ -1,0 +1,472 @@
+/* ----------------------------------------------------- start variables */
+:root {
+    --main_color: #821379;
+    --body_color1: #f0eabe;
+    --body_color2: #bfead7;
+}
+
+@font-face {
+    font-family: "arb-fonts";
+    src: url(../Fonts/ArbFONTS-Questv1-Regular.otf);
+}
+
+/* -------------------------------------------------start stander */
+*,
+body {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: "arb-fonts", sans-serif;
+    color: #fff;
+    min-width: 0;
+    min-height: 0;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none !important;
+}
+
+body {
+    position: relative;
+    margin: 0;
+}
+
+main {
+    padding: 2rem;
+    background: linear-gradient(to right, var(--body_color1), var(--body_color2));
+    min-height: 100vh;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+main > div {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 0.8rem;
+    height: calc(100vh - 4rem);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* start style of left side */
+main .left-side {
+    width: 36%;
+}
+
+main .left-side .left-side-title {
+    display: flex;
+    width: 100%;
+    height: 4.5rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.4rem 15%;
+    background-color: var(--main_color);
+    border-radius: 1rem;
+    font-size: 2rem;
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+main .left-side .left-side-title::after {
+    content: "";
+    background-color: #fff;
+    width: 0.1rem;
+    height: 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+main .left-side .left-side-content {
+    width: 100%;
+    flex: 1;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+main .left-side .left-side-content .items {
+    display: flex;
+    width: 100% !important;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex: 1;
+}
+
+main .left-side .left-side-content .items .swiper-slide {
+    flex-shrink: 0 !important;
+}
+
+main .left-side .left-side-content .items .item {
+    width: 48.5%;
+    height: 49%;
+    margin-bottom: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+main .left-side .left-side-content .items .item .item-img {
+    flex: 1;
+}
+
+main .left-side .left-side-content .items .item .item-img img {
+    width: 100% !important;
+    height: 100%;
+}
+
+main .left-side .left-side-content .items .item .item-desc {
+    display: flex;
+    align-items: center;
+    background-color: var(--main_color);
+    justify-content: space-between;
+    padding: 0.1rem 1rem;
+}
+
+main .left-side .left-side-content .items .item .item-desc p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+main .left-side .left-side-content .items .item .item-desc p.price {
+    font-size: 2rem;
+}
+
+main .left-side .left-side-content .items .item .item-desc p.price span {
+    font-size: 0.9rem;
+}
+
+/* start style of center side */
+main .center-side {
+    width: 24%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+main .center-side .story-img {
+    flex: 3;
+    width: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+main .center-side .story-img img {
+    height: 100%;
+    width: 100%;
+}
+
+main .center-side .cone-desc {
+    width: 100%;
+    margin-top: 1rem;
+    background-color: var(--main_color);
+    border-radius: 1rem;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+main .center-side .cone-desc div > p {
+    margin: 0;
+}
+
+main .center-side .cone-desc div > p:nth-of-type(1) {
+    font-size: 2.8rem;
+}
+
+main .center-side .cone-desc div > p:nth-of-type(2) {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+}
+
+main .center-side .cone-desc div > p:nth-of-type(3) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    margin-top: 0.4rem;
+    font-size: 1.8rem;
+}
+
+main .center-side .cone-desc div > p:nth-of-type(3) svg {
+    width: 1.5rem;
+    margin-right: 0.6rem;
+}
+
+/* start style of right side */
+main .right-side {
+    width: 36%;
+    display: flex;
+    flex-direction: column;
+}
+
+main .right-side .logo {
+    width: 100%;
+    flex: 3;
+    overflow: hidden;
+    border-radius: 1rem;
+    background-color: var(--main_color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+main .right-side .logo img {
+    width: 4rem;
+}
+
+main .right-side .video-elem {
+    margin: 1rem 0;
+    width: 100%;
+    flex: 4;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+main .right-side .video-elem iframe {
+    width: 100%;
+    border-radius: 1rem;
+    height: 100%;
+}
+
+main .right-side .time-elem {
+    background-color: var(--main_color);
+    width: 100%;
+    border-radius: 1rem;
+    padding: 2rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 2;
+}
+
+main .right-side .time-elem .date {
+    width: 70%;
+    height: 100%;
+}
+
+main .right-side .time-elem .logo-wasla {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main .right-side .time-elem .logo-wasla img {
+    /*width: 5.5rem;*/
+    width: 100%;
+}
+
+main .right-side .time-elem .date {
+    display: flex;
+    flex-wrap: wrap;
+    border-right: 2px solid #fff;
+    padding-right: 3rem;
+}
+
+main .right-side .time-elem .date > p {
+    text-align: right;
+    margin: 0rem;
+    font-size: 2.3em;
+    width: 100%;
+}
+
+main .right-side .time-elem .date .time {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+    margin-bottom: -1rem;
+}
+
+main .right-side .time-elem .date .time span {
+    font-size: 4.5rem;
+    margin-bottom: 0rem;
+}
+
+main .right-side .am-bm {
+    margin-right: 1rem;
+    font-size: 1.5rem !important;
+}
+
+@media (max-width: 1700px) {
+    main {
+        padding: 1.2rem;
+    }
+
+    main > div {
+        padding: 1rem;
+        border-radius: 0.6rem;
+        height: calc(100vh - 2.4rem);
+    }
+
+    main .left-side .left-side-title {
+        height: 3.7rem;
+        padding: 0.3rem 10%;
+        border-radius: 0.6rem;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    main .left-side .left-side-title::after {
+        height: 60%;
+    }
+
+    main .left-side .left-side-content .items .item {
+        border-radius: 0.6rem;
+    }
+
+    main .left-side .left-side-content .items .item .item-desc p {
+        font-size: 0.9rem;
+    }
+
+    main .left-side .left-side-content .items .item .item-desc p.price {
+        font-size: 1.5rem;
+    }
+
+    main .left-side .left-side-content .items .item .item-desc p.price span {
+        font-size: 0.7rem;
+    }
+
+    /* start style of center side */
+    main .center-side .story-img {
+        border-radius: 0.6rem;
+    }
+
+    main .center-side .cone-desc {
+        border-radius: 0.6rem;
+    }
+
+    main .center-side .cone-desc div > p:nth-of-type(1) {
+        font-size: 2rem;
+    }
+
+    main .center-side .cone-desc div > p:nth-of-type(2) {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+
+    main .center-side .cone-desc div > p:nth-of-type(3) {
+        margin-bottom: 0.3rem;
+        margin-top: 0.4rem;
+        font-size: 1.4rem;
+    }
+
+    main .center-side .cone-desc div > p:nth-of-type(3) svg {
+        width: 1.2rem;
+        margin-right: 0.4rem;
+    }
+
+    /* start style of right side */
+    main .right-side .logo {
+        border-radius: 0.6rem;
+    }
+
+    main .right-side .video-elem {
+        border-radius: 0.6rem;
+    }
+
+    main .right-side .video-elem iframe {
+        border-radius: 0.6rem;
+    }
+
+    main .right-side .time-elem {
+        border-radius: 0.6rem;
+        padding: 1.5rem 1rem;
+    }
+
+    main .right-side .time-elem .logo-wasla img {
+        width: 4rem;
+    }
+
+    main .right-side .time-elem .date {
+        border-right: 1px solid #fff;
+        padding-right: 2rem;
+    }
+
+    main .right-side .time-elem .date > p {
+        font-size: 1.5em;
+    }
+
+    main .right-side .time-elem .date .time {
+        margin-bottom: -0.5rem;
+    }
+
+    main .right-side .time-elem .date .time span {
+        font-size: 3.5rem;
+    }
+
+    main .right-side .am-bm {
+        margin-right: 0.5rem;
+        font-size: 1rem !important;
+    }
+}
+
+@media (max-width: 1200px) {
+    main {
+        padding: 1rem;
+    }
+
+    main .left-side .left-side-content .items .item .item-desc p {
+        font-size: 0.8rem;
+    }
+
+    main .left-side .left-side-content .items .item .item-desc p.price {
+        font-size: 1.3rem;
+    }
+
+    main .left-side .left-side-content .items .item .item-desc p.price span {
+        font-size: 0.6rem;
+    }
+
+    /* start style of right side */
+    main .right-side .time-elem {
+        padding: 1rem;
+    }
+
+    main .right-side .time-elem .logo-wasla img {
+        width: 3.5rem;
+    }
+
+    main .right-side .time-elem .date > p {
+        font-size: 1.2em;
+    }
+
+    main .right-side .time-elem .date .time span {
+        font-size: 3rem;
+    }
+
+    main .right-side .am-bm {
+        font-size: 0.9rem !important;
+    }
+}
+
+@media (max-width: 992px) {
+    main {
+        display: block;
+    }
+
+    main > div {
+        width: 90% !important;
+        margin: 1rem auto !important;
+    }
+}
+
+@media (max-width: 576px) {
+    main > div {
+        width: 100% !important;
+    }
+}
